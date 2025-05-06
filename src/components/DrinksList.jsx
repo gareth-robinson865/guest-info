@@ -2,7 +2,9 @@ import React from 'react'
 
 const DrinksList = () => {
   return (
-    <div>DrinksList</div>
+    <div>
+        <h3>This is the drinks list</h3>
+    </div>
   )
 }
 
