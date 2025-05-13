@@ -9,7 +9,15 @@ const Songlist = () => {
     useEffect(() => {
         setPending(true);
         projectfirestore.collection('Guests').get().then((snapshot) => {
-            console.log(snapshot); 
+            if(snapshot.empty) {
+              setError('no songs to load');
+              setPending(false);
+            } else {
+              let songs = []
+              snapshot.docs.forEach(doc => {
+                console.log(doc)
+              })
+            }; 
         })
     }, []);
 
