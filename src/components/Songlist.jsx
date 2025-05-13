@@ -15,9 +15,14 @@ const Songlist = () => {
             } else {
               let songs = []
               snapshot.docs.forEach(doc => {
-                console.log(doc)
+                songs.push({ id: doc.id, ...doc.data()})
               })
-            }; 
+              setData(songs);
+              setPending(false);
+            }
+        }).catch(err => {
+          setError(err.message)
+          setPending(false);
         })
     }, []);
 
