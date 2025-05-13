@@ -18,7 +18,9 @@ const Songlist = () => {
         <h3>This is the song list</h3>
         {error && <p className="error">{error}</p>}
         {pending && <p className="loading">Loading...</p>}
-        
+        {data && data.map(info => (
+          <p key={info.id}>{info.song}</p>
+        ))}
     </div>
   )
 }
